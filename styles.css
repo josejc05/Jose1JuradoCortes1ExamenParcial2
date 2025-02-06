@@ -95,3 +95,19 @@ button:hover {
 .eliminarTarea:hover {
     background-color: darkred;
 }
+
+/* Estilo para el contenedor del Ejercicio 2 */
+#ejercicio2 {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Estilo para el input de tarea */
+#tareaInput {
+    width: calc(100% - 120px); /* Ajustar el ancho del input */
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

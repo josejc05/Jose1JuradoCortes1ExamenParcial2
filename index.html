@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen DOM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Examen DOM</h1>
+
+<!-- Ejercicio 1 -->
+<p class="texto">Texto original</p>
+<button id="cambiarColor">Cambiar Color</button>
+
+<!-- Ejercicio 2 -->
+<h2>Lista de Tareas</h2>
+<input type="text" id="tareaInput" placeholder="Escribe una tarea">
+<button id="agregarTarea">Agregar</button>
+<ul id="listaTareas"></ul>
+
+<!-- Ejercicio 3 -->
+<h2>Menú de Pizzas</h2>
+<button id="cargarMenu">Cargar Menú</button>
+<div id="menu"></div>
+
+<!-- Ejercicio 4 -->
+<h2>Formulario de Reserva</h2>
+<form id="reservaForm">
+  <label>Nombre: <input type="text" id="nombre" required></label>
+  <label>Email: <input type="email" id="email" required></label>
+  <label>Fecha: <input type="date" id="fecha" required></label>
+  <label>Hora: <input type="time" id="hora" required></label>
+  <button type="submit">Reservar</button>
+</form>
+<p id="mensaje"></p>
+
+<script src="script.js"></script>
+</body>
+</html>

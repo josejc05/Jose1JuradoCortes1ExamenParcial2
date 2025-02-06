@@ -62,3 +62,12 @@ button:hover {
 #cambiarColor:hover {
     background-color: darkorange;
 }
+
+/* Estilo específico para el botón del Ejercicio 2 */
+#agregarTarea {
+    background-color: lightgreen;
+}
+
+#agregarTarea:hover {
+    background-color: green;
+}

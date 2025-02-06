@@ -148,3 +148,31 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
+/* Estilo para el título del formulario */
+.form-title {
+    color: orange;
+    text-align: left;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para el formulario de reserva */
+#formReserva {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo para la confirmación de reserva */
+.confirmacion-reserva {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Ocultar por defecto */
+}
+
+.confirmacion-reserva.success {
+    background-color: green;
+    color: white;
+}

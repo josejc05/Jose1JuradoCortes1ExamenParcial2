@@ -77,10 +77,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ejercicio 4: Formulario de Reserva
     const formulario = document.getElementById("formReserva");
+    const confirmacionReserva = document.getElementById("confirmacionReserva");
 
     formulario.addEventListener("submit", (event) => {
         event.preventDefault();
-        alert("Reserva realizada con éxito");
+
+        const nombre = document.getElementById("nombre").value;
+        const numPersonas = document.getElementById("numPersonas").value;
+        const fecha = document.getElementById("fecha").value;
+        const hora = document.getElementById("hora").value;
+
+        confirmacionReserva.textContent = `Reserva confirmada para ${nombre} el ${fecha}T${hora} para ${numPersonas} personas.`;
+        confirmacionReserva.classList.add("success");
+        confirmacionReserva.style.display = "block";
+
         formulario.reset();
     });
 });

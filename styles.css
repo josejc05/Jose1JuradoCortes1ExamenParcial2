@@ -53,3 +53,12 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Estilo específico para el botón del Ejercicio 1 */
+#cambiarColor {
+    background-color: orange;
+}
+
+#cambiarColor:hover {
+    background-color: darkorange;
+}

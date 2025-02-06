@@ -71,3 +71,27 @@ button:hover {
 #agregarTarea:hover {
     background-color: green;
 }
+
+/* Estilo para las tareas y el botón de eliminar */
+.tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.eliminarTarea {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.eliminarTarea:hover {
+    background-color: darkred;
+}

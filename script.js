@@ -17,8 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     botonAgregar.addEventListener("click", () => {
         if (inputTarea.value.trim() !== "") {
-            const nuevaTarea = document.createElement("li");
-            nuevaTarea.textContent = inputTarea.value;
+            const nuevaTarea = document.createElement("div");
+            nuevaTarea.className = "tarea";
+
+            const tareaTexto = document.createElement("span");
+            tareaTexto.textContent = inputTarea.value;
+            nuevaTarea.appendChild(tareaTexto);
+
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.className = "eliminarTarea";
+            botonEliminar.addEventListener("click", () => {
+                listaTareas.removeChild(nuevaTarea);
+            });
+            nuevaTarea.appendChild(botonEliminar);
+
             listaTareas.appendChild(nuevaTarea);
             inputTarea.value = "";
         }

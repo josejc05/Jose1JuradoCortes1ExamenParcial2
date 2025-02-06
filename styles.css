@@ -84,6 +84,10 @@ button:hover {
     background-color: white; /* Color de fondo blanco */
 }
 
+.tarea span {
+    flex-grow: 1; /* Permitir que el texto de la tarea crezca para empujar el botón a la derecha */
+}
+
 .eliminarTarea {
     background-color: red;
     color: white;
@@ -91,7 +95,7 @@ button:hover {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: auto; /* Alinear a la derecha */
+    margin-left: 10px; /* Añadir margen a la izquierda */
 }
 
 .eliminarTarea:hover {

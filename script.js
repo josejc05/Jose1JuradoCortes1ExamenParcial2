@@ -16,25 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const listaTareas = document.getElementById("listaTareas");
 
     botonAgregar.addEventListener("click", () => {
-        if (inputTarea.value.trim() !== "") {
-            const nuevaTarea = document.createElement("div");
-            nuevaTarea.className = "tarea";
+        const tareaTexto = inputTarea.value.trim();
+        const soloLetras = /^[a-zA-Z\s]+$/;
 
-            const tareaTexto = document.createElement("span");
-            tareaTexto.textContent = inputTarea.value;
-            nuevaTarea.appendChild(tareaTexto);
-
-            const botonEliminar = document.createElement("button");
-            botonEliminar.textContent = "Eliminar";
-            botonEliminar.className = "eliminarTarea";
-            botonEliminar.addEventListener("click", () => {
-                listaTareas.removeChild(nuevaTarea);
-            });
-            nuevaTarea.appendChild(botonEliminar);
-
-            listaTareas.appendChild(nuevaTarea);
-            inputTarea.value = "";
+        if (tareaTexto === "" || !soloLetras.test(tareaTexto)) {
+            alert("Por favor, ingrese una tarea válida (solo letras).");
+            return;
         }
+
+        const nuevaTarea = document.createElement("div");
+        nuevaTarea.className = "tarea";
+
+        const tareaSpan = document.createElement("span");
+        tareaSpan.textContent = tareaTexto;
+        nuevaTarea.appendChild(tareaSpan);
+
+        const botonEliminar = document.createElement("button");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.className = "eliminarTarea";
+        botonEliminar.addEventListener("click", () => {
+            listaTareas.removeChild(nuevaTarea);
+        });
+        nuevaTarea.appendChild(botonEliminar);
+
+        listaTareas.appendChild(nuevaTarea);
+        inputTarea.value = "";
     });
 
     // Ejercicio 3: Menú de Pizzas

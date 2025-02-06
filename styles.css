@@ -134,3 +134,17 @@ button:hover {
     margin-top: 10px;
     list-style-type: none;
 }
+
+#menuPizzas h3 {
+    color: orange;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pizza-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}

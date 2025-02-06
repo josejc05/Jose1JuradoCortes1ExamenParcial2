@@ -49,9 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     botonMenu.addEventListener("click", async () => {
         const pizzas = ["Margarita", "Pepperoni", "Hawaiana"];
-        menuPizzas.innerHTML = "";
+        menuPizzas.innerHTML = "<h3>Menú de Pizzas:</h3>";
         pizzas.forEach(pizza => {
             const item = document.createElement("li");
+            item.className = "pizza-item";
             item.textContent = pizza;
             menuPizzas.appendChild(item);
         });

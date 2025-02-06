@@ -48,14 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuPizzas = document.getElementById("menuPizzas");
 
     botonMenu.addEventListener("click", async () => {
-        const pizzas = ["Margarita", "Pepperoni", "Hawaiana"];
-        menuPizzas.innerHTML = "<h3>Menú de Pizzas:</h3>";
-        pizzas.forEach(pizza => {
-            const item = document.createElement("li");
-            item.className = "pizza-item";
-            item.textContent = pizza;
-            menuPizzas.appendChild(item);
-        });
+        // Simular solicitud a la API ficticia
+        const fetchMenu = async () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (Math.random() < 0.5) {
+                        resolve(["Margarita", "Pepperoni", "Hawaiana"]);
+                    } else {
+                        reject("Error al cargar el menú");
+                    }
+                }, 2000); // Retardo de 2 segundos
+            });
+        };
+
+        try {
+            const pizzas = await fetchMenu();
+            menuPizzas.innerHTML = "<h3>Menú de Pizzas:</h3>";
+            pizzas.forEach(pizza => {
+                const item = document.createElement("li");
+                item.className = "pizza-item";
+                item.textContent = pizza;
+                menuPizzas.appendChild(item);
+            });
+        } catch (error) {
+            menuPizzas.innerHTML = `<p style="color: red;">${error}</p>`;
+        }
     });
 
     // Ejercicio 4: Formulario de Reserva

@@ -1,54 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Ejercicio 1: Manipulación del DOM
-    const texto = document.querySelector(".texto");
-    texto.textContent = "Color modificado";
+    // Ejercicio 1: Cambio de Color
     const botonColor = document.getElementById("cambiarColor");
+    const textoColor = document.getElementById("colorTexto");
+
     botonColor.addEventListener("click", () => {
-        texto.style.color = "#ffcc00";
+        const colores = ["red", "blue", "green", "purple", "orange"];
+        const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+        textoColor.style.color = colorAleatorio;
     });
 
-    // Ejercicio 2: Creación de elementos dinámicamente
-    const tareaInput = document.getElementById("tareaInput");
+    // Ejercicio 2: Lista de Tareas
+    const inputTarea = document.getElementById("tareaInput");
+    const botonAgregar = document.getElementById("agregarTarea");
     const listaTareas = document.getElementById("listaTareas");
-    document.getElementById("agregarTarea").addEventListener("click", () => {
-        if (tareaInput.value.trim() !== "") {
+
+    botonAgregar.addEventListener("click", () => {
+        if (inputTarea.value.trim() !== "") {
             const nuevaTarea = document.createElement("li");
-            nuevaTarea.textContent = tareaInput.value;
+            nuevaTarea.textContent = inputTarea.value;
             listaTareas.appendChild(nuevaTarea);
-            tareaInput.value = "";
+            inputTarea.value = "";
         }
     });
 
-    // Ejercicio 3: Fetch y Async/Await
-    document.getElementById("cargarMenu").addEventListener("click", async () => {
-        const menu = document.getElementById("menu");
-        menu.textContent = "Cargando...";
-        try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            const response = await fetch("https://fake-api-pizzas.com/menu");
-            if (!response.ok) throw new Error("Error al cargar el menú");
-            const data = await response.json();
-            menu.innerHTML = data.pizzas.map(pizza => `<p>${pizza.nombre}</p>`).join("");
-        } catch (error) {
-            menu.textContent = "Error al cargar el menú";
-        }
+    // Ejercicio 3: Menú de Pizzas
+    const botonMenu = document.getElementById("cargarMenu");
+    const menuPizzas = document.getElementById("menuPizzas");
+
+    botonMenu.addEventListener("click", async () => {
+        const pizzas = ["Margarita", "Pepperoni", "Cuatro Quesos", "Hawaiana", "Barbacoa"];
+        menuPizzas.innerHTML = "";
+        pizzas.forEach(pizza => {
+            const item = document.createElement("li");
+            item.textContent = pizza;
+            menuPizzas.appendChild(item);
+        });
     });
 
-    // Ejercicio 4: Validación del formulario
-    document.getElementById("reservaForm").addEventListener("submit", (event) => {
+    // Ejercicio 4: Formulario de Reserva
+    const formulario = document.getElementById("formReserva");
+
+    formulario.addEventListener("submit", (event) => {
         event.preventDefault();
-        const nombre = document.getElementById("nombre").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const fecha = document.getElementById("fecha").value;
-        const hora = document.getElementById("hora").value;
-        const mensaje = document.getElementById("mensaje");
-
-        if (!nombre || !email || !fecha || !hora) {
-            mensaje.textContent = "Por favor, completa todos los campos.";
-            mensaje.style.color = "red";
-        } else {
-            mensaje.textContent = "Reserva realizada con éxito.";
-            mensaje.style.color = "green";
-        }
+        alert("Reserva realizada con éxito");
+        formulario.reset();
     });
 });

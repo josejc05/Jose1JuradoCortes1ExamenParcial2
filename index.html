@@ -7,34 +7,31 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Examen DOM</h1>
+<div class="container">
+  <h1>Examen DOM</h1>
 
-<!-- Ejercicio 1 -->
-<p class="texto">Texto original</p>
-<button id="cambiarColor">Cambiar Color</button>
+  <h2>Ejercicio 1: Cambio de Color</h2>
+  <p id="colorTexto">Color original</p>
+  <button id="cambiarColor">Cambiar Color</button>
 
-<!-- Ejercicio 2 -->
-<h2>Lista de Tareas</h2>
-<input type="text" id="tareaInput" placeholder="Escribe una tarea">
-<button id="agregarTarea">Agregar</button>
-<ul id="listaTareas"></ul>
+  <h2>Ejercicio 2: Lista de Tareas</h2>
+  <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+  <button id="agregarTarea">Agregar</button>
+  <ul id="listaTareas"></ul>
 
-<!-- Ejercicio 3 -->
-<h2>Menú de Pizzas</h2>
-<button id="cargarMenu">Cargar Menú</button>
-<div id="menu"></div>
+  <h2>Ejercicio 3: Menú de Pizzas</h2>
+  <button id="cargarMenu">Cargar Menú</button>
+  <ul id="menuPizzas"></ul>
 
-<!-- Ejercicio 4 -->
-<h2>Formulario de Reserva</h2>
-<form id="reservaForm">
-  <label>Nombre: <input type="text" id="nombre" required></label>
-  <label>Email: <input type="email" id="email" required></label>
-  <label>Fecha: <input type="date" id="fecha" required></label>
-  <label>Hora: <input type="time" id="hora" required></label>
-  <button type="submit">Reservar</button>
-</form>
-<p id="mensaje"></p>
-
+  <h2>Ejercicio 4: Formulario de Reserva</h2>
+  <form id="formReserva">
+    <label>Nombre: <input type="text" id="nombre"></label>
+    <label>Email: <input type="email" id="email"></label>
+    <label>Fecha: <input type="date" id="fecha"></label>
+    <label>Hora: <input type="time" id="hora"></label>
+    <button type="submit">Reservar</button>
+  </form>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

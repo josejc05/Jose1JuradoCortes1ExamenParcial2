@@ -81,6 +81,7 @@ button:hover {
     border: 1px solid #ddd;
     margin-bottom: 5px;
     border-radius: 5px;
+    background-color: white; /* Color de fondo blanco */
 }
 
 .eliminarTarea {
@@ -90,6 +91,7 @@ button:hover {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: auto; /* Alinear a la derecha */
 }
 
 .eliminarTarea:hover {

@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ejercicio 1: Cambio de Color
     const botonColor = document.getElementById("cambiarColor");
     const textoColor = document.getElementById("colorTexto");
+    const contenedorColor = textoColor.parentElement;
 
     botonColor.addEventListener("click", () => {
-        const colores = ["red", "blue", "green", "purple", "orange"];
-        const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
-        textoColor.style.color = colorAleatorio;
+        contenedorColor.style.backgroundColor = "#ffcc00";
+        textoColor.style.border = "1px solid lightgray";
+        textoColor.textContent = "Color modificado";
     });
 
     // Ejercicio 2: Lista de Tareas
